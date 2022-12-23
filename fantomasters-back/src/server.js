@@ -1,4 +1,6 @@
 import path from "path";
+import dotenv from 'dotenv';
+dotenv.config();
 import express from "express";
 import {db, connectToDb} from "./db.js";
 
