@@ -6,7 +6,7 @@ Fantômasters est une web app full-stack réalisée avec Angular pour le front e
 
 ## Le site
 
-L'URL du site est : **https://fantomasters.ew.r.appspot.com/home** (Host par Google Cloud)
+L'URL du site est : **https://fantomasters.ew.r.appspot.com/assets/home** (Host par Google Cloud)
 
 Le site donne accès à plusieurs fonctionnalités :
 
