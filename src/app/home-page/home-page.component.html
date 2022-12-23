@@ -1,0 +1,27 @@
+<div>
+  <h2>Bienvenue sur FantôMasters !</h2>
+  <p>
+    Sur FantôMasters, tu peux choisir un rôle parmi les cinq disponibles 
+    et ajouter d'autres utilisateurs à ta liste de FantôMates ! 
+  </p>
+  <p>
+    Toi qui te sentais triste de devoir hanter les humains tout seul, 
+    te voilà désormais un fantôme connecté ! Ne néglige pas tes FantôMates, le comble pour un fantôme c'est de se faire ghost par ses amis !
+  </p>
+  <div class="friend-list">
+    <h4>Liste de FantôMates</h4>
+    <ul class="friend-list" *ngIf="user.isConnected else elseBlock">
+      <li *ngFor="let friend of user.friends">
+        <span>{{friend}} </span>
+        <button class="delete-btn" (click)="deleteFriend(user, friend)"><fa-icon [icon]="faTrash"></fa-icon></button>
+      </li>
+      <form (ngSubmit)="onSubmit()">
+        <label for="friend-name">Ajoute un nouveau FantôMate : </label>
+        <input id="friend-name" name="friend-name" type="text" [(ngModel)]="newFriendId"/>
+        <div class="errorMessage" *ngIf="err">{{errorMessage}}</div>
+        <input class="add-btn" type="submit" value="Ajouter"/>
+      </form>
+    </ul>
+    <ng-template #elseBlock><a routerLink="/login"> Connecte-toi</a> pour voir ta liste d'amis !</ng-template>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<h3 class="login-title">Connexion</h3>
+<div *ngIf="!user.isConnected then UserIsNotConnected else UserIsConnected">
+</div>
+<ng-template #UserIsNotConnected>
+  <form (ngSubmit)="logIn(loginInput.value, passwordInput.value)" class="login-form">
+    <div class="user-name-input">
+      <label>Nom d'utilisateur</label><br />
+      <input class='login-input' type="text" required #loginInput/>
+    </div>
+    <div class="password-input">
+      <label>Mot de passe</label><br />
+      <input class='login-input' type="password" required #passwordInput>
+      <div class="errorMessage" *ngIf="err">{{errorMessage}}</div>
+    </div>
+    <button class="login-btn" type="submit">Se connecter</button>
+    <div>
+      <a routerLink="/sign-up">Pas encore inscrit ? Crée ton compte !</a>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #UserIsConnected>
+  <h4> Tu es connecté ! Amuse-toi bien avec tes amis fantômes !</h4>
+</ng-template>
+

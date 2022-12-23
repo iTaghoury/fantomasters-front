@@ -1,0 +1,56 @@
+ul {
+  list-style: none;
+}
+
+li {
+  padding: 10px;
+}
+
+li:nth-child(even) {
+  background-color: rgb(217, 222, 226);
+}
+li:nth-child(odd) {
+  background-color: rgb(244, 247, 249);
+}
+
+button {
+  color: white;
+  background-color: rgb(241, 47, 47);
+  border: none;
+  border-radius: 3px;
+}
+
+button:hover {
+  background-color: rgb(180, 5, 5);
+}
+
+input {
+  height: 30px;
+  border: 2px solid rgb(43, 109, 138);
+  border-radius: 5px;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.delete-btn {
+  float: right;
+}
+
+.add-btn {
+  color: white;
+  background-color: rgb(57, 150, 190);
+  height: 34px;
+}
+
+.add-btn:hover {
+  background-color: rgb(43, 109, 138);
+}
+
+a {
+  color: rgb(57, 150, 190);
+  border-radius: 3px;
+}
+
+a:hover {
+  color: rgb(43, 109, 138);
+}

@@ -1,0 +1,45 @@
+h1 {
+  color: white;
+  margin-right: 10px;
+}
+
+
+.login-btn {
+  border: none;
+  border-radius: 7px;
+  height: 30px;
+}
+
+.login-btn:hover {
+  background-color: rgb(195, 198, 201);
+}
+
+.login-btn-div {
+  text-align: right;
+  width: 100%;
+  background-color: rgb(43, 109, 138);
+  border: 2px solid rgb(43, 109, 138);
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.profile {
+  padding: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.edit-role-btn {
+  border: none;
+  border-radius: 7px;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.edit-role-btn:hover {
+  background-color: rgb(195, 198, 201);
+}
+
+.title-div {
+  display: flex;
+}

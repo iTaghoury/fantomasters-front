@@ -1,0 +1,44 @@
+a {
+  color: rgb(57, 150, 190);
+  background-color: rgb(243, 243, 243);
+  border-radius: 3px;
+}
+
+a:hover {
+  background-color: white;
+  color: rgb(43, 109, 138);
+}
+
+.login-btn {
+  color: white;
+  background-color: rgb(57, 150, 190);
+  margin: 10px;
+}
+
+.login-btn:hover {
+  background-color: rgb(43, 109, 138);
+}
+
+.login-form{
+  text-align: center;
+}
+
+.user-name-input {
+  text-align: left;
+}
+
+.password-input {
+  text-align: left;
+}
+
+label {
+  text-align: left;
+}
+
+input {
+  height: 35px;
+  border: 2px solid rgb(43, 109, 138);
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 5px;
+}

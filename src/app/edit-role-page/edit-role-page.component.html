@@ -1,0 +1,40 @@
+<div>
+  <h2>Choisis ton rôle !</h2>
+  <table class="role-table">
+    <thead>
+      <tr>
+        <th colspan="4">Liste des rôles</th>
+      </tr>
+    </thead>
+    <tbody>
+      <colgroup span="3" class="columns"></colgroup>
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Description</th>
+        <th class="invisible-placeholder" scope="col"></th>
+      </tr>
+      <tr *ngFor="let role of allRoles">
+        <th scope="row">
+          {{role.name}}
+          <img src="assets/{{role.name.toLowerCase()}}.png" alt={{role.name}} width="75" height="70">
+        </th>
+        <td>
+          <p>{{role.description}}</p>
+          <p class="quote">"{{role.citation}}"</p>
+        </td>
+        <td><button 
+              class="role-picking-btn"
+              id="{{role.name}}" 
+              (click)="editRole(role.name)"
+            >
+              Choisir ce rôle
+            </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!--<ul class="role-list" *ngFor="let role of roles">
+    <li class="role-item"><button class="role-picking-btn">{{role}}</button></li>
+  </ul>-->

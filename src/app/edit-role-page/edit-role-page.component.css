@@ -1,0 +1,46 @@
+
+.role-picking-btn {
+  padding: 10px;
+  margin: 20px;
+  height: 45px;
+  border-radius: 7px;
+  background-color: rgb(57, 150, 190);
+  border: none;
+  color: white;
+}
+
+.role-picking-btn:hover {
+  background-color: rgb(45, 122, 155);
+}
+
+.role-table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  border-radius: 2px;
+  width: 100%;
+}
+
+.quote {
+  font-style: italic;
+}
+thead {
+  background-color: rgb(57, 150, 190);
+  color: white;
+  margin: 0;
+  margin-top: 15px;
+}
+
+th {
+  border: 1px solid black;
+  text-align: center;
+}
+
+th[scope='row'] {
+  font-weight: normal;
+
+}
+
+td {
+  border: 1px solid black;
+  text-align: center;
+}
