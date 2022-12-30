@@ -46,6 +46,16 @@ input {
   background-color: rgb(43, 109, 138);
 }
 
+.add-from-list-btn {
+  color: white;
+  background-color: rgb(57, 150, 190);
+  float: right;
+}
+
+.add-from-list-btn:hover {
+  background-color: rgb(43, 109, 138);
+}
+
 a {
   color: rgb(57, 150, 190);
   border-radius: 3px;

@@ -10,18 +10,28 @@
   </p>
   <div class="friend-list">
     <h4>Liste de FantôMates</h4>
-    <ul class="friend-list" *ngIf="user.isConnected else elseBlock">
-      <li *ngFor="let friend of user.friends">
-        <span>{{friend}} </span>
-        <button class="delete-btn" (click)="deleteFriend(user, friend)"><fa-icon [icon]="faTrash"></fa-icon></button>
-      </li>
-      <form (ngSubmit)="onSubmit()">
-        <label for="friend-name">Ajoute un nouveau FantôMate : </label>
-        <input id="friend-name" name="friend-name" type="text" [(ngModel)]="newFriendId"/>
-        <div class="errorMessage" *ngIf="err">{{errorMessage}}</div>
-        <input class="add-btn" type="submit" value="Ajouter"/>
-      </form>
-    </ul>
+    <div *ngIf="user.isConnected else elseBlock">
+      <ul class="friend-list">
+        <li *ngFor="let friend of user.friends">
+          <span>{{friend}} </span>
+          <button class="delete-btn" (click)="deleteFriend(user, friend)"><fa-icon [icon]="faTrash"></fa-icon></button>
+        </li>
+        <form (ngSubmit)="onSubmit()">
+          <label for="friend-name">Ajoute un nouveau FantôMate : </label>
+          <input id="friend-name" name="friend-name" type="text" [(ngModel)]="newFriendId"/>
+          <div class="errorMessage" *ngIf="err">{{errorMessage}}</div>
+          <input class="add-btn" type="submit" value="Ajouter"/>
+        </form>
+      </ul>
+      <h2>Suggestions d'amis </h2>
+      <ul class="suggested-users-list">
+        <li *ngFor="let suggestedUser of usersList">
+          <span>{{suggestedUser}}</span>
+          <button class="add-from-list-btn" (click)="addFriend(suggestedUser)"><fa-icon [icon]="faPlus"></fa-icon></button>
+        </li>
+      </ul>
+    </div>
+    
     <ng-template #elseBlock><a routerLink="/login"> Connecte-toi</a> pour voir ta liste d'amis !</ng-template>
   </div>
 </div>

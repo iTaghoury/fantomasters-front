@@ -29,6 +29,34 @@ app.get('/api/users/:id', async (req, res) => {
   }
 })
 
+// Renvoie la liste de tous les utilisateurs mis à part ceux qui sont déjà amis avec l'utilisateur "userId"
+
+app.get('/api/users-list/:userId', async (req, res) => {
+  const { userId } = req.params;
+  const user = await db.collection('users').findOne({ id: userId });
+  const ids = []
+
+  if(user) {
+    const suggestedUsers = await db.collection('users').find({
+      id: {
+        $nin: user.friends
+      } 
+    }).toArray();
+    if(suggestedUsers !== []) {
+      for(var i = 0; i < suggestedUsers.length; i++) {
+        if(suggestedUsers[i].id !== userId) ids.push(suggestedUsers[i].id)
+      }
+      res.status(200).json(ids);
+    } else {
+      res.status(404).send('Not found')
+    }
+    
+  } else {
+    res.status(404).send(`L'utilisateur ${userId} n'existe pas`);
+  }
+  
+})
+
 // Crée un nouvel utilisateur et l'ajoute à la base de données s'il n'y figure pas déjà
 
 app.post('/api/signup/:id', async (req, res) => {
@@ -77,7 +105,7 @@ app.put('/api/users/:id/addFriend/:friendId', async (req, res) => {
   const user = await db.collection('users').findOne({ id });
   const friend = await db.collection('users').findOne({id: friendId});
   
-  if(user && friend) {
+  if(user && friend && id !== friendId) {
     const alreadyFriend = await db.collection('users').findOne({ id, friends: friendId});
     if(alreadyFriend) {
       res.status(403).send(`Le fantôme ${friendId} est déjà ton PhantoMate !`);

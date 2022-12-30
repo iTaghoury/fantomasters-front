@@ -19,6 +19,10 @@ export class UserService {
     private http: HttpClient,
   ) { }
 
+  getUsersList(id: string): Observable<string[]> {
+    return this.http.get<string[]>(`/api/users-list/${id}`);
+  }
+
   getUser(id :string): Observable<User> {
     return this.http.get<User>(`/api/users/${id}`)
   }
